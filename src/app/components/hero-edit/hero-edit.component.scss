@@ -1,0 +1,111 @@
+@import '../../../assets/scss/variables';
+
+.hero-edit-container {
+  background: $white_opacity;
+  margin: 0 auto;
+  padding: 10px;
+  align-items: center;
+  min-height: 70%;
+  width: 670px;
+  margin-top: 160px;
+
+  .hero-edit-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+    font-family: $main_font;
+    font-size: 18px;
+    margin-bottom: 15px;
+
+    &__data {
+      padding: 10px 5px 5px 10px;
+      margin-top: 20px;
+      margin-right: 15px;
+      width: 150px;
+    }
+
+    &__input {
+      padding: 15px;
+      margin-top: 15px;
+      width: 320px;
+      font-family: $main_font;
+      font-size: 18px;
+    }
+
+    &__image {
+      min-width: 200px;
+      min-height: 200px;
+    }
+    &__error {
+      padding: 12px;
+      width: 450px;
+      font-family: $main_font;
+      font-size: 18px;
+      background: $background_hover;
+      color: $red;
+    }
+
+    &__heroUpdated {
+      padding: 10px;
+      width: 450px;
+      font-family: $main_font;
+      font-size: 16px;
+      background: $card_font_color;
+      color: $white;
+      -webkit-animation: seconds 0.5s forwards;;
+      -webkit-animation-delay: 1s;
+      animation: seconds 0.5s forwards;
+      animation-delay: 0.5s;
+    }
+  }
+  .hero-edit-buttons {
+    display: flex;
+    justify-content: space-around;
+
+    &__option {
+      color: $white;
+      border: 0;
+      font-family: $main_font;
+      font-size: 18px;
+      background-color: $red_opacity;
+      padding: 15px;
+      width: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      &:hover {
+        @extend .button-transition-hover;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 600px) {
+  .hero-edit-container {
+    .hero-edit-row {
+      flex-direction: column;
+      &__error {
+        width: 320px;
+      }
+    }
+  }
+}
+
+.button-transition-hover {
+  transform: scale(1.1);
+  transition-duration: 0.2s;
+}
+
+@keyframes seconds {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    left: -9999px;
+  }
+}
